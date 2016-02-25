@@ -39,8 +39,8 @@ $brand-color:       #2a7ae2;
 // Width of the content area
 $content-width:    800px;
 
-$on-palm:          600px;
-$on-laptop:        800px;
+$tablet:           50rem;
+$laptop:           75rem;
 
 *, *:before, *:after {
     box-sizing: inherit;
@@ -59,7 +59,7 @@ html {
 //     }
 // }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
+    @media screen and (min-width: $device) {
         @content;
     }
 }

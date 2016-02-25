@@ -1,7 +1,19 @@
 // page-specific attributes
-.portfolio-lg--nav {
+.portfolio-goals {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $color-background;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: ($spacing-unit / 4) 0;
+    
     h3 {
         display: inline-block;
+        margin: 0;
     }
 
     ul {
@@ -36,25 +48,22 @@
             font-style: normal;
         }
     }
+    
+    @include media-query($laptop) {
+        position: static;
+    }
 }
 
 // basic portfolio styling
 .portfolio {
-    &--meta {
+    margin: 0 0 ($spacing-unit * 2) 0;
+    
+    .portfolio--meta {
         @extend %vertical-center;
-        position: fixed;
-        height: calc(#{$body-height});
-        width: 40vw;
-        padding: 0 $spacing-unit;
-    }
-
-    &--body {
-        padding-left: 40vw;
+        margin-bottom: $spacing-unit;
     }
 
     article {
-        min-height: calc(#{$body-height});
-        margin: 0 $spacing-unit;
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
@@ -64,20 +73,24 @@
         }
     }
     
-    &--content {
-        width: 100%;
-    }
-}
-
-// complex nav styling
-.portfolio-lg, .portfolio-plm {
-    margin: 0 unquote('-#{$page-gutter}');
-    
-    .portfolio--nav {
-        position: absolute;
-        bottom: $spacing-unit;
-        left: $spacing-unit;
-        right: $spacing-unit;
+    @include media-query($laptop) {
+        margin: 0 unquote("-#{$page-gutter}");
+        
+        .portfolio--meta {
+            position: fixed;
+            height: calc(#{$body-height});
+            width: 40vw;
+            padding: 0 $spacing-unit;
+        }
+        
+        .portfolio--body {
+            margin-left: 40vw;
+            padding: 0 $spacing-unit;
+        }
+        
+        article {
+            min-height: calc(#{$body-height});
+        }
     }
 }
 
@@ -110,5 +123,12 @@
     h5 {
         @extend %serif;
         text-align: center;
+    }
+    
+    @include media-query($laptop) {
+        position: absolute;
+        bottom: $spacing-unit;
+        left: $spacing-unit;
+        right: $spacing-unit;
     }
 }

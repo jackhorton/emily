@@ -27,10 +27,12 @@ body {
     
     display: flex;
     flex-direction: column;
-    padding: calc(#{$body-offset}) $page-gutter 0 $page-gutter;
+    padding: calc(#{$body-offset}) $spacing-unit 0 $spacing-unit;
+    
+    @include media-query($tablet) {
+        padding: calc(#{$body-offset}) $page-gutter 0 $page-gutter;
+    }
 }
-
-
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm

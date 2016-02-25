@@ -15,7 +15,7 @@ header {
     .header-wrapper {
         display: flex;
         justify-content: space-between;
-        padding: 0 $page-gutter;
+        padding: 0 $spacing-unit;
     }
 
     h3 {
@@ -31,6 +31,12 @@ header {
         a:hover {
             text-decoration: none;
             color: darken($color-burgundy, 10%);
+        }
+    }
+    
+    @include media-query($tablet) {
+        .header-wrapper {
+            padding: 0 $page-gutter;
         }
     }
 }
