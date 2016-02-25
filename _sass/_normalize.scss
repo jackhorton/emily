@@ -59,12 +59,16 @@ img {
 /**
  * Figures
  */
-figure > img {
-    display: block;
+figure {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 figcaption {
+    @extend %serif;
     font-size: $font-size-sm;
+    font-weight: $font-normal;
 }
 
 
