@@ -16,7 +16,7 @@ function javascript() {
     return b.bundle()
         .pipe(source('learning-goals.js'))
         .pipe(buffer())
-        .pipe(gulp.dest('./_site/js'));
+        .pipe(gulp.dest('./js'));
 }
 javascript.description = 'Bundles each page javascript into a single file';
 
