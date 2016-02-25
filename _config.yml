@@ -21,9 +21,6 @@ exclude:
     - node_modules
     - gulpfile.js
     - package.json
-    - '*.js'
-keep_files:
-    - 'js'
 
 collections:
     portfolio:
