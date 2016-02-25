@@ -1,4 +1,6 @@
-_site
+_site/*
+!_site/js
+!_site/js/*.js
 .sass-cache
 .jekyll-metadata
 node_modules
