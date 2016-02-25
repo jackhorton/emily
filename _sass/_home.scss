@@ -1,0 +1,42 @@
+.home {
+    .home--header h1 {
+        @extend %serif;
+        text-align: center;
+    }
+}
+
+.home--options {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+}
+
+.home--option {
+    flex: 1 0 50%;
+    text-align: center;
+    transition: 0.2s ease background;
+    border-radius: 3px;
+    color: $color-black;
+    
+    a, a:hover {
+        color: inherit;
+    }
+    
+    &:hover {
+        color: $color-background;
+    }
+    
+    &__inner {
+        padding: $spacing-unit 0;
+    }
+    
+    &__pink:hover {
+        background: $color-burgundy;
+    }
+    
+    &__blue:hover {
+        background: $color-turquoise;
+    }
+}

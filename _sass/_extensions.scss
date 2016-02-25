@@ -1,0 +1,21 @@
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+%vertical-center {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
+%sans-serif {
+    font-family: "league-gothic", Impact, Charcoal, sans-serif;
+}
+
+%serif {
+    font-family: "ff-tisa-web-pro", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}

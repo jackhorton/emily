@@ -1,0 +1,233 @@
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/**
+ * Basic page style and layout
+ */
+body {
+    color: $color-black;
+    background-color: $color-background;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    font-size: $font-size-std;
+    font-weight: $font-normal;
+    
+    display: flex;
+    flex-direction: column;
+    padding: calc(#{$body-offset}) $page-gutter 0 $page-gutter;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
+}
+
+
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $font-size-sm;
+}
+
+
+
+/**
+ * Lists
+ */
+ul, ol {
+    margin-left: $spacing-unit;
+}
+
+li {
+    > ul,
+    > ol {
+         margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    @extend %sans-serif;
+    font-weight: $font-normal;
+}
+
+h1 {
+    font-size: $font-size-xxxl;
+}
+
+h2 {
+    font-size: $font-size-xxl;
+}
+
+h3 {
+    font-size: $font-size-xl;
+}
+
+h4 {
+    font-size: $font-size-lg;
+}
+
+h5 {
+    font-size: $font-size-std;
+}
+
+h6 {
+    font-size: $font-size-sm;
+}
+
+/**
+ * Other text
+ */
+p, span, li {
+    @extend %serif;
+    font-size: $font-size-std;
+    font-weight: $font-normal;
+}
+
+/**
+ * Blockquotes
+ */
+blockquote {
+    color: lighten($color-grey, 15%);
+    border-left: 2px solid lighten($color-grey, 15%);
+    padding-left: $spacing-unit / 2;
+    font-size: 18px;
+    font-style: italic;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+    font-size: 15px;
+    border: 1px solid $color-grey-light;
+    border-radius: 3px;
+    background-color: #eef;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+/**
+ * Links
+ */
+a {
+    color: darken($color-turquoise, 35%);
+    transition: all 0.2s ease;
+    text-decoration: none;
+
+    &:hover {
+        color: darken($color-turquoise, 55%);
+    }
+    
+    &.active {
+        font-style: italic;
+    }
+}
+
+/**
+ * Prevent FOUT
+ */
+.wf-loading {
+    h1, h2, h3, h4, h5, h6, p, span {
+        visibility: hidden;
+    }
+}
+.wf-active {
+    h1, h2, h3, h4, h5, h6, p, span {
+        visibility: visible;
+    }
+}
+
+/**
+ * Horizontal Rules
+ */
+hr.fancy {
+    border: none;
+    text-align: center;
+    @extend %serif;
+    margin: ($spacing-unit / 2) 0;
+    
+    &::before {
+        content: "******";
+    }
+}
+
+/**
+ * Wrapper
+ */
+// .wrapper {
+//     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+//     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+//     margin-right: auto;
+//     margin-left: auto;
+//     padding-right: $spacing-unit;
+//     padding-left: $spacing-unit;
+//     @extend %clearfix;
+//
+//     @include media-query($on-laptop) {
+//         max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+//         max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }

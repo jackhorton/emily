@@ -1,0 +1,23 @@
+<header data-scroll-header data-gumshoe-header>
+    <div class="header-wrapper">
+        <h3>
+            <a class="site-title" href="{{ site.baseurl }}/">Emily Saeli</a>
+        </h3>
+        <nav class="site-nav">
+            {% for collection in site.collections %}
+                {% unless collection.docs.size == 0 %}
+                    <div class="nav-item">
+                        {% assign entry = collection.docs | where: 'navbar', true | first %}
+                        <span><a href="{{ entry.url }}">
+                            {% if collection.pretty_label %}
+                                {{ collection.pretty_label }}
+                            {% else %}
+                                {{ collection.label }}
+                            {% endif %}
+                        </a></span>
+                    </div>
+                {% endunless %}
+            {% endfor %}
+        </nav>
+    </div>
+</header>

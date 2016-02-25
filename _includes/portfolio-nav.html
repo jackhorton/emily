@@ -1,0 +1,15 @@
+<div class="portfolio--nav">
+    <div class="portfolio--nav__inner">
+        <h5>Glossary</h5>
+        <ul>
+            {% assign portfolio = site.portfolio | sort: 'index' %}
+            {% for piece in portfolio %}
+                <li>
+                    <a href="{{ piece.url }}" {% if piece.title == page.title %} class="active" {% endif %}>
+                        {{ piece.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

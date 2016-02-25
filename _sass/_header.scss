@@ -1,0 +1,48 @@
+header {
+    display: flex;
+    @extend %vertical-center;
+    align-items: stretch;
+    height: calc(#{$header-height});
+    background: lighten($color-turquoise, 10%);
+    box-shadow: 0 1px 2px 2px lighten($color-turquoise, 10%);
+    margin-bottom: $header-margin;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    line-height: 1;
+
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 $page-gutter;
+    }
+
+    h3 {
+        @extend %vertical-center;
+        @extend %serif;
+        text-decoration: none;
+        margin: 0;
+
+        a, a:visited {
+            color: $color-burgundy;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: darken($color-burgundy, 10%);
+        }
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.nav-item {
+    @extend %vertical-center;
+    @extend %serif;
+    padding-left: 2rem;
+}

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="ws ws-home">
+    <div class="page--header">
+        <h1>{{ page.title }}</h1>
+    </div>
+    
+    <div class="ws--sample-list">
+        <ul>
+            {% for sample in site.writing_samples %}
+                {% unless sample.navbar == true %}
+                    <a href="{{ sample.url }}"><li>
+                        <h3>{{ sample.title }}</h3>
+                        <span>{{ sample.description }}</span>
+                    </li></a>
+                {% endunless %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>

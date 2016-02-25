@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="portfolio portfolio-lg">
+    <div class="portfolio--meta">
+        <div class="page--header">
+            <h4>Portfolio</h4>
+            <hr />
+            <h1>{{ page.title }}</h1>
+            <div class="portfolio-lg--nav">
+                <h3>Goals:</h3>
+                <ul data-gumshoe>
+                    {% for goal in page.goals %}
+                        {% if goal.active == true %}
+                            <li><a data-scroll href="{{ forloop.index | prepend: '#lg' }}">{{ forloop.index }}</a></li>
+                        {% else %}
+                            <li class="disabled"><a href="#">{{ forloop.index }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% include portfolio-nav.html %}
+    </div>
+    <div class="portfolio--body">
+        <article>
+            {{ content }}
+        </article>
+    </div>
+</div>

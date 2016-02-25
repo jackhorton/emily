@@ -1,0 +1,77 @@
+---
+---
+@charset "utf-8";
+
+$font-bold:         600;
+$font-normal:       400;
+$font-size-sm:      0.875rem;
+$font-size-std:     1rem;
+$font-size-lg:      1.5rem;
+$font-size-xl:      2rem;
+$font-size-xxl:     3rem;
+$font-size-xxxl:    4rem;
+
+$header-height:     unquote('#{$font-size-xl} + 20px');
+$header-margin:     20px;
+$body-offset:       unquote('#{$header-height} + #{$header-margin}');
+$body-height:       unquote('100vh - (#{$header-height} + #{$header-margin})');
+$page-width:        60vw;
+$page-gutter:       ((100vw - $page-width) / 2);
+
+$spacing-unit:      2rem;
+
+$color-darken:      15%;
+$color-lighten:     15%;
+$color-black:       #111111;
+$color-burgundy:    #b14343;
+$color-salmon:      #cb7575;
+$color-pink:        #ef9e9f;
+$color-turquoise:   #a3c9c7;
+$color-background:  #f9fbfd;
+$color-grey:        #5c5c5c;
+$color-grey-blue:   #353568;
+$color-grey-light:  lighten($color-grey, 40%);
+$color-grey-dark:   darken($color-grey, 25%);
+
+$text-color:        $color-black;
+$brand-color:       #2a7ae2;
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+}
+
+
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "normalize";
+@import "extensions";
+@import "helper-classes";
+@import "header";
+@import "common";
+@import "portfolio";
+@import "writing-samples";
+@import "home";

@@ -1,0 +1,5 @@
+<footer class="site-footer">
+    {% if page.js == true %}
+        <script src="{{ page.title | slugify | append: '.js' | prepend: '/js/' }}"></script>
+    {% endif %}
+</footer>
