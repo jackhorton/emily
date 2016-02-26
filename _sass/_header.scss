@@ -23,14 +23,34 @@ header {
         @extend %serif;
         text-decoration: none;
         margin: 0;
+        color: $color-burgundy;
+        
+        &:before {
+            content: attr(data-label-small);
+        }
+        
+        &:hover {
+            color: darken($color-burgundy, 10%);
+        }
+        
+        @include media-query($tablet) {
+            a, a:visited {
+                display: inline !important;
+            }
+            
+            &:before {
+                content: normal;
+            }
+        }
 
         a, a:visited {
-            color: $color-burgundy;
+            color: inherit;
+            display: none;
         }
 
         a:hover {
             text-decoration: none;
-            color: darken($color-burgundy, 10%);
+            color: inherit;
         }
     }
     

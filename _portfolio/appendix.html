@@ -1,0 +1,12 @@
+---
+title: Appendix
+layout: portfolio/default
+index: 4
+---
+<p>Here is a list of writing samples that I used in my Portfolio</p>
+
+<ol>
+    {% for sample in site.data.appendix %}
+        <li>{% include link.html url=sample.link text=sample.title target=sample.target %}</li>
+    {% endfor %}
+</ol>

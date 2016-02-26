@@ -1,0 +1,6 @@
+{% if include.appendix %}
+    {% assign appendix = site.data.appendix[1] %}
+    <a href="{{ appendix.link }}"{% if appendix.target %} target="{{ appendix.target }}"{% endif %}>{{ appendix.title }}</a>
+{% else %}
+    <a href="{{ include.url }}"{% if include.target %} target="{{ include.target }}"{% endif %}>{{ include.text }}</a>
+{% endif %}
